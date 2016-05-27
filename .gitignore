@@ -12,4 +12,5 @@
 # Gradle Files
 gradlew*
 gradle/wrapper
-
+.gradle
+build
