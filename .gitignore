@@ -1,6 +1,6 @@
 *.class
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.ear
@@ -8,3 +8,8 @@
 # Intellij Files
 .idea/*
 *.iml
+
+# Gradle Files
+gradlew*
+gradle/wrapper
+
