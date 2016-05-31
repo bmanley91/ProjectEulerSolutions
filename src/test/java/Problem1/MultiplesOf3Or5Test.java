@@ -15,19 +15,19 @@ import static org.junit.Assert.assertTrue;
 @SuppressWarnings("Duplicates")
 public class MultiplesOf3Or5Test {
 
+    private static final List<Integer> TEST_INTEGER_LIST = new ArrayList<Integer>() {{
+        add(3);
+        add(5);
+        add(6);
+        add(9);}};
+
     @Test
     public void testFindMultiplesUnderMax() {
         final int maxValue = 10;
-        final List<Integer> expectedResults = new ArrayList<Integer>() {{
-            add(3);
-            add(5);
-            add(6);
-            add(9);
-        }};
 
         List<Integer> actualResults = MultiplesOf3Or5.findMultiplesUnderMax(maxValue);
 
-        assertEquals("Expected list not returned.", expectedResults, actualResults);
+        assertEquals("Expected list not returned.", TEST_INTEGER_LIST, actualResults);
     }
 
     @Test
@@ -60,14 +60,8 @@ public class MultiplesOf3Or5Test {
 
     @Test
     public void testSumList() {
-        final List<Integer> testIntegerList = new ArrayList<Integer>() {{
-            add(3);
-            add(5);
-            add(6);
-            add(9);
-        }};
         final int expectedTotal = 23;
 
-        assertEquals("Sum total did not match expected amount.", expectedTotal, MultiplesOf3Or5.sumList(testIntegerList));
+        assertEquals("Sum total did not match expected amount.", expectedTotal, MultiplesOf3Or5.sumList(TEST_INTEGER_LIST));
     }
 }

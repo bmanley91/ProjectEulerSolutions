@@ -29,11 +29,11 @@ public class MultiplesOf3Or5 {
     }
 
     static boolean isMultipleOf3(int value) {
-        return (value % 3) == 0;
+        return value % 3 == 0;
     }
 
     static boolean isMultipleOf5(int value) {
-        return (value % 5) == 0;
+        return value % 5 == 0;
     }
 
     static int sumList(List<Integer> integerList) {

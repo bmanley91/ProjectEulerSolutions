@@ -1,6 +1,9 @@
 group 'bmanley'
 version '1.0-SNAPSHOT'
 
+apply from: file("$rootDir/gradle/pmd.gradle")
+apply from: file("$rootDir/gradle/findBugs.gradle")
+
 apply plugin: 'java'
 
 sourceCompatibility = 1.5

@@ -1,0 +1,7 @@
+apply plugin: 'pmd'
+
+pmd {
+    ignoreFailures = false
+    reportsDir = file("build/reports/pmd/")
+    ruleSets = ['basic']
+}
