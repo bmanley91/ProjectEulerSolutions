@@ -7,9 +7,6 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by bmanley on 5/27/16.
- */
 public class EvenFibonacciSumTest {
 
     private static final List<Integer> INPUT_LIST = new ArrayList<Integer>() {{
