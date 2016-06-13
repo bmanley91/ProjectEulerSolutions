@@ -1,7 +1,5 @@
 package Problem3;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *  The prime factors of 13195 are 5, 7, 13 and 29.
@@ -11,27 +9,19 @@ public class HighestPrimeFactor {
     private static final long INPUT_VALUE = 600851475143L;
 
     public static void main(String args[]) {
-
+        System.out.println("Result: " + getHighestPrimeFactor(INPUT_VALUE));
     }
 
-    static List<Long> getFactors(long input) {
-        List<Long> resultList = new ArrayList<Long>();
+    static long getHighestPrimeFactor(long input) {
+        int currentNumber;
 
-        for (long i = 1L; i <= input; i++) {
-            if (input % i == 0) {
-                resultList.add(i);
+        for (currentNumber = 2; currentNumber <= input; currentNumber++) {
+            if (input % currentNumber == 0) {
+                input /= currentNumber;
+                currentNumber--;
             }
         }
 
-        return resultList;
+        return currentNumber;
     }
-
-    static List<Long> getPrimes(List<Long> inputList) {
-        return inputList;
-    }
-
-    static boolean isPrime(Long input) {
-        return false;
-    }
-
 }
