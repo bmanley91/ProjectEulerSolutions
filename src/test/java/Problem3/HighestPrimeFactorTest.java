@@ -2,9 +2,6 @@ package Problem3;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -12,30 +9,21 @@ import static org.junit.Assert.assertTrue;
 public class HighestPrimeFactorTest {
 
     @Test
-    public void testGetFactors() {
-        final long input = 8L;
-        final List<Long> expectedResult = new ArrayList<Long>();
-        expectedResult.add(1L);
-        expectedResult.add(2L);
-        expectedResult.add(4L);
-        expectedResult.add(8L);
+    public void testGetHighestPrimeFactor() {
+        final long total = 8L;
+        final long expectedValue = 4L;
 
-        assertEquals("Result did not match expected value.", expectedResult, HighestPrimeFactor.getFactors(input));
+        assertEquals("Result did not match expected value.", expectedValue, HighestPrimeFactor.getHighestPrimeFactor(total));
     }
 
     @Test
-    public void testGetPrimes() {
-        final List<Long> input = new ArrayList<Long>();
-        input.add(3L);
-        input.add(4L);
-        input.add(5L);
+    public void testIsAFactorOf() {
+        final long total = 500;
+        final long notAFactor = 3;
+        final long factor = 5;
 
-        final List<Long> expectedResults = new ArrayList<Long>();
-        input.add(3L);
-        input.add(4L);
-        input.add(5L);
-
-        assertEquals("Results did not match expected values.", expectedResults, HighestPrimeFactor.getPrimes(input));
+        assertFalse(HighestPrimeFactor.isAFactorOf(notAFactor, total));
+        assertTrue(HighestPrimeFactor.isAFactorOf(factor, total));
     }
 
     @Test
