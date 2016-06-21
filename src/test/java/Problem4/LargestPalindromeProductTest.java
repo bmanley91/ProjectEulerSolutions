@@ -12,10 +12,9 @@ public class LargestPalindromeProductTest {
     @Test
     public void testCheckProductsAboveValue() {
         final int expectedResult = 906609;
-        final int maxThreeDigitNumber = 999;
 
         assertEquals("Actual result did not match expected value.", expectedResult,
-                LargestPalindromeProduct.checkProductsAboveValue(maxThreeDigitNumber));
+                LargestPalindromeProduct.checkProductsAboveValue());
     }
 
     @Test
