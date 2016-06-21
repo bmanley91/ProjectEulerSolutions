@@ -35,8 +35,6 @@ public class LargestPalindromeProduct {
     }
 
     static boolean isPalindrome(int input) {
-        System.out.println("Checking if " + input + " is a palindrome.");
-
         String reverse = new StringBuilder().append(input).reverse().toString();
 
         return reverse.equals(String.valueOf(input));
