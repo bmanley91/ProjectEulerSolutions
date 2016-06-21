@@ -6,15 +6,37 @@ package Problem4;
  *  Find the largest palindrome made from the product of two 3-digit numbers.
  */
 public class LargestPalindromeProduct {
+    private static final int MAX_THREE_DIGIT_NUMBER = 999;
+    private static final int MIN_THREE_DIGIT_NUMBER = 100;
 
 
     public static void main(String args[]) {
-
+        System.out.println(checkProductsAboveValue());
     }
 
-    static boolean isPalindrome(String input) {
-        String reverse = new StringBuilder(input).reverse().toString();
+    static int checkProductsAboveValue() {
+        int largestSoFar = 0;
 
-        return reverse.equals(input);
+        for (int x = MIN_THREE_DIGIT_NUMBER; x < MAX_THREE_DIGIT_NUMBER; x++) {
+            for (int y = MIN_THREE_DIGIT_NUMBER; y < MAX_THREE_DIGIT_NUMBER; y++) {
+                int testValue = x * y;
+
+                if (isPalindrome(testValue)) {
+                    if (largestSoFar < testValue) {
+                        largestSoFar = testValue;
+                    }
+                }
+            }
+        }
+
+        return largestSoFar;
+    }
+
+    static boolean isPalindrome(int input) {
+        System.out.println("Checking if " + input + " is a palindrome.");
+
+        String reverse = new StringBuilder().append(input).reverse().toString();
+
+        return reverse.equals(String.valueOf(input));
     }
 }
