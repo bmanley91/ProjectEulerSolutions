@@ -14,6 +14,7 @@ public class LargestPalindromeProduct {
         System.out.println(checkProductsAboveValue());
     }
 
+    @SuppressWarnings("PMD.CollapsibleIfStatements")
     static int checkProductsAboveValue() {
         int largestSoFar = 0;
 
@@ -21,8 +22,9 @@ public class LargestPalindromeProduct {
             for (int y = MIN_THREE_DIGIT_NUMBER; y < MAX_THREE_DIGIT_NUMBER; y++) {
                 int testValue = x * y;
 
-                if (isPalindrome(testValue)) {
-                    if (largestSoFar < testValue) {
+                // PMD Says to collapse this if statement. I disagree.
+                if (largestSoFar < testValue) {
+                    if (isPalindrome(testValue)) {
                         largestSoFar = testValue;
                     }
                 }
