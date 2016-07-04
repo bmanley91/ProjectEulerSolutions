@@ -6,8 +6,6 @@ apply from: file("$rootDir/gradle/findBugs.gradle")
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
-
 repositories {
     mavenCentral()
 }
