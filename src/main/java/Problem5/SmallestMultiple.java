@@ -16,15 +16,29 @@ public class SmallestMultiple {
     }
 
     /** MATH!
-     * LCM = Least Common Multiple, GCD = Greatest Common Denominator
-     * LCM(1 to n) = (LCM(1 to n-1) * n) / (GCD(LCM(1 to n-1), n))
+     *
+     *  LCM = Least Common Multiple, GCD = Greatest Common Denominator
+     *  LCM(1 to n) = (LCM(1 to n-1) * n) / (GCD(LCM(1 to n-1), n))
+     *
      **/
 
     static int getLeastCommonMultipleUnderValue(int input) {
-        return 0;
+        int multiple = 1;
+
+        for (int i = 2; i <= input; i++) {
+            multiple *= i / getGreatestCommonDenominator(i, multiple);
+        }
+
+        return multiple;
     }
 
     static int getGreatestCommonDenominator(int input1, int input2) {
-        return 0;
+        while (input2 != 0) {
+            int temp = input1;
+            input1 = input2;
+            input2 = temp % input2;
+        }
+
+        return input1;
     }
 }
